@@ -1,6 +1,6 @@
 from .forms import ProductForm, CategoryForm
 from .models import Product, Category
-from django.views.generic import ListView, DetailView, TemplateView, UpdateView, CreateView
+from django.views.generic import ListView, DetailView, TemplateView, UpdateView, CreateView, DeleteView
 from django.urls import reverse_lazy
 from django.forms.models import inlineformset_factory
 
@@ -33,6 +33,13 @@ class ProductUpdateView(UpdateView):
     success_url = reverse_lazy('catalog:product_list')
 
 
+class ProductDeleteView(DeleteView):
+    model = Product
+    context_object_name = 'product'
+    template_name = 'catalog/product_delete.html'
+    success_url = reverse_lazy('catalog:product_list')
+
+
 class ContactsTemplateView(TemplateView):
     template_name = 'catalog/contacts.html'
 
@@ -56,4 +63,11 @@ class CategoryUpdateView(UpdateView):
     form_class = CategoryForm
     template_name = 'catalog/category_form.html'
     context_object_name = 'category'
+    success_url = reverse_lazy('catalog:product_list')
+
+
+class CategoryDeleteView(DeleteView):
+    model = Category
+    context_object_name = 'category'
+    template_name = 'catalog/category_delete.html'
     success_url = reverse_lazy('catalog:product_list')
