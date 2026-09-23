@@ -17,16 +17,27 @@ class ProductDetailView(DetailView):
     context_object_name = 'product'
 
 
-class ContactsTemplateView(TemplateView):
-    template_name = 'catalog/contacts.html'
-
-
 class ProductCreateView(CreateView):
     model = Product
     form_class = ProductForm
     template_name = 'catalog/product_form.html'
     context_object_name = 'product'
     success_url = reverse_lazy('catalog:product_list')
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm
+    template_name = 'catalog/product_form.html'
+    context_object_name = 'product'
+    success_url = reverse_lazy('catalog:product_list')
+
+
+class ContactsTemplateView(TemplateView):
+    template_name = 'catalog/contacts.html'
+
+
+
 
 
 class CategoryCreateView(CreateView):
