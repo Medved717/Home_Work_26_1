@@ -1,5 +1,5 @@
 {% extends 'catalog/base.html'%}
-{% block title %} Создание/редактирование продукта {% endblock %}
+{% block title %} Создание/редактирование категории {% endblock %}
 {% block content %}
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -12,9 +12,9 @@
         <div class="row justify-content-center">
             <div class="col-6">
                 {% if object.pk %}
-                <h1>Редактирование продукта:</h1>
+                <h1>Редактирование категории:</h1>
                 {% else %}
-                <h1>Создание продукта:</h1>
+                <h1>Создание категории:</h1>
                 {% endif %}
                 <div class="card">
                     <div class="card-body">

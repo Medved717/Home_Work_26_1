@@ -37,14 +37,23 @@ class ContactsTemplateView(TemplateView):
     template_name = 'catalog/contacts.html'
 
 
-
-
-
 class CategoryCreateView(CreateView):
     model = Category
     form_class = CategoryForm
-    template_name = 'catalog/product_form.html'
+    template_name = 'catalog/category_form.html'
     context_object_name = 'category'
     success_url = reverse_lazy('catalog:product_list')
 
 
+class CategoryDetailView(DetailView):
+    model = Category
+    template_name = 'catalog/category_detail.html'
+    context_object_name = 'category'
+
+
+class CategoryUpdateView(UpdateView):
+    model = Category
+    form_class = CategoryForm
+    template_name = 'catalog/category_form.html'
+    context_object_name = 'category'
+    success_url = reverse_lazy('catalog:product_list')

@@ -51,7 +51,7 @@ class CategoryForm(forms.ModelForm):
         fields = ['name', 'description']
 
     def __init__(self, *args, **kwargs):
-        super().__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['name'].widget.attrs.update(
             {
                 'class': 'form-control',

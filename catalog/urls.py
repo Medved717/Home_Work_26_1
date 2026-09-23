@@ -9,4 +9,7 @@ urlpatterns = [
     path('product_detail/<int:pk>', views.ProductDetailView.as_view(), name='product_detail'),
     path('product_form/', views.ProductCreateView.as_view(), name='product_create'),
     path('product_form/<int:pk>', views.ProductUpdateView.as_view(), name='product_update'),
+    path('category_detail/<int:pk>/', views.CategoryDetailView.as_view(), name='category_detail'),
+    path('category_form/<int:pk>', views.ProductUpdateView.as_view(), name='category_update'),
+    path('category_form/', views.CategoryCreateView.as_view(), name='category_create'),
 ]
